@@ -3,8 +3,35 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Janda.Runtime.Watchers", "Janda.Runtime.Watchers\Janda.Runtime.Watchers.csproj", "{759077C8-B3E7-4000-9B58-BC8CC0B22109}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{759077C8-B3E7-4000-9B58-BC8CC0B22109}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{759077C8-B3E7-4000-9B58-BC8CC0B22109}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{759077C8-B3E7-4000-9B58-BC8CC0B22109}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{759077C8-B3E7-4000-9B58-BC8CC0B22109}.Debug|x64.Build.0 = Debug|Any CPU
+		{759077C8-B3E7-4000-9B58-BC8CC0B22109}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{759077C8-B3E7-4000-9B58-BC8CC0B22109}.Debug|x86.Build.0 = Debug|Any CPU
+		{759077C8-B3E7-4000-9B58-BC8CC0B22109}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{759077C8-B3E7-4000-9B58-BC8CC0B22109}.Release|Any CPU.Build.0 = Release|Any CPU
+		{759077C8-B3E7-4000-9B58-BC8CC0B22109}.Release|x64.ActiveCfg = Release|Any CPU
+		{759077C8-B3E7-4000-9B58-BC8CC0B22109}.Release|x64.Build.0 = Release|Any CPU
+		{759077C8-B3E7-4000-9B58-BC8CC0B22109}.Release|x86.ActiveCfg = Release|Any CPU
+		{759077C8-B3E7-4000-9B58-BC8CC0B22109}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0C6DB1F-3F3D-4F23-A9F1-8BBF308EC1E2}
 	EndGlobalSection
 EndGlobal

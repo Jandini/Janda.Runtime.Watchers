@@ -4,3 +4,5 @@ DOT_BUILD_SOLUTIONS=Janda.Runtime.Watchers
 DOT_PUBLISH_RUNTIMES=win-x64
 # Add publish arguments e.g. -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true
 DOT_PUBLISH_ARGUMENTS=-c Release
+# Semicolon delimited project names to be published
+DOT_PUBLISH_PROJECTS=Janda.Runtime.Application
