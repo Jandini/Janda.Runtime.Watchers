@@ -1,8 +1,9 @@
 ﻿using Janda.Runtime.Watchers;
 using Microsoft.Extensions.Logging;
 
+
 namespace Janda.Runtime.Application
-{
+{    
     public class Service : IApplicationService
     {
         private readonly ILogger<Service> _logger;

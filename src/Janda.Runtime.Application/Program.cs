@@ -6,6 +6,9 @@ using CommandLine;
 using Serilog;
 using Janda.Runtime.Watchers;
 
+// This is required to WatchMethod work
+[module: WatchMethod]
+
 namespace Janda.Runtime.Application
 {
     class Program : IApplicationProgram

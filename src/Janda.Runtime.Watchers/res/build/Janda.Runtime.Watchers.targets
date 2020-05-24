@@ -10,7 +10,9 @@
     <FodyGenerateXsd Condition="$(FodyGenerateXsd) == ''">true</FodyGenerateXsd>
     <MsBuildMajorVersion>15</MsBuildMajorVersion>
     <MsBuildMajorVersion Condition="'$(MSBuildVersion)' != ''">$([System.Version]::Parse($(MSBuildVersion)).Major)</MsBuildMajorVersion>
-    <DisableFody Condition=" '$(DefineConstants.Contains(&quot;WATCH_METHODS&quot;))' != 'True' ">true</DisableFody>
+
+    <!-- This is working only partially. There is problem with semicolons -->
+    <!-- <DisableFody Condition=" '$(DefineConstants.Contains(&quot;WATCH_METHODS&quot;))' != 'True' ">true</DisableFody>-->
   </PropertyGroup>
 
   <ItemGroup Condition="Exists($(ProjectWeaverXml))">
@@ -28,12 +30,13 @@
   <UsingTask TaskName="Fody.UpdateReferenceCopyLocalTask" AssemblyFile="$(FodyAssembly)" />
   <UsingTask TaskName="Fody.VerifyTask" AssemblyFile="$(FodyAssembly)" />
 
+  <!-- Janda.Runtime.Watchers add message -->  
   <Target
      Name="EnableFody"
      AfterTargets="AfterCompile"
      BeforeTargets="FodyTarget"
      Condition="Exists(@(IntermediateAssembly)) And $(DesignTimeBuild) != true And $(DisableFody) != true">
-    <Message Text="Weaving @(IntermediateAssembly)..." Importance="high"/>
+    <Message Text="Weaving @(IntermediateAssembly)... make sure [module: WatchMethod] is present in the code." Importance="high"/>
   </Target>
 
 
