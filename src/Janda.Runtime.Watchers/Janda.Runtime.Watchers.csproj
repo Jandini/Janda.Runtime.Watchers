@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetsDir>$(ProjectDir)..\..\cid\targets</TargetsDir>
+    <NoWarn>NU5100</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\bin</OutputPath>
+  </PropertyGroup>
+
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\bin</OutputPath>
+  </PropertyGroup>
+
+   
+  <ItemGroup>
+    <None Include="res/build/Janda.Runtime.Watchers.props" Pack="true" PackagePath="build/Janda.Runtime.Watchers.props" />
+    <None Include="res/build/Janda.Runtime.Watchers.targets" Pack="true" PackagePath="build/Janda.Runtime.Watchers.targets" />
+
+    <None Include="res/weaver/MethodDecorator.Fody.dll" Pack="true" PackagePath="weaver/MethodDecorator.Fody.dll" />
+
+    <None Include="res/netstandardtask\Fody.dll" Pack="true" PackagePath="netstandardtask\Fody.dll" />
+    <None Include="res/netstandardtask\FodyCommon.dll" Pack="true" PackagePath="netstandardtask\FodyCommon.dll" />
+    <None Include="res/netstandardtask\FodyHelpers.dll" Pack="true" PackagePath="netstandardtask\FodyHelpers.dll" />
+    <None Include="res/netstandardtask\FodyIsolated.dll" Pack="true" PackagePath="netstandardtask\FodyIsolated.dll" />
+    <None Include="res/netstandardtask\Mono.Cecil.dll" Pack="true" PackagePath="netstandardtask\Mono.Cecil.dll" />
+    <None Include="res/netstandardtask\Mono.Cecil.Pdb.dll" Pack="true" PackagePath="netstandardtask\Mono.Cecil.Pdb.dll" />
+    <None Include="res/netstandardtask\Mono.Cecil.Rocks.dll" Pack="true" PackagePath="netstandardtask\Mono.Cecil.Rocks.dll" />
+
+    <None Include="res/netclassictask\Fody.dll" Pack="true" PackagePath="netclassictask\Fody.dll" />
+    <None Include="res/netclassictask\FodyCommon.dll" Pack="true" PackagePath="netclassictask\FodyCommon.dll" />
+    <None Include="res/netclassictask\FodyHelpers.dll" Pack="true" PackagePath="netclassictask\FodyHelpers.dll" />
+    <None Include="res/netclassictask\FodyIsolated.dll" Pack="true" PackagePath="netclassictask\FodyIsolated.dll" />
+    <None Include="res/netclassictask\Mono.Cecil.dll" Pack="true" PackagePath="netclassictask\Mono.Cecil.dll" />
+    <None Include="res/netclassictask\Mono.Cecil.Pdb.dll" Pack="true" PackagePath="netclassictask\Mono.Cecil.Pdb.dll" />
+    <None Include="res/netclassictask\Mono.Cecil.Rocks.dll" Pack="true" PackagePath="netclassictask\Mono.Cecil.Rocks.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fody" Version="6.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MethodDecorator.Fody" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.4" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.4" />
+  </ItemGroup>
+
+  <Import Project="$(TargetsDir)\GitVersion.targets" />
+  <Import Project="$(TargetsDir)\Obfuscar.targets" />
+  <Import Project="$(TargetsDir)\Package.targets" />
+
+</Project>
