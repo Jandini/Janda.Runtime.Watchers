@@ -1,17 +1,15 @@
-﻿using Janda.Runtime.Watchers;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
-
-namespace Janda.Runtime.Application
-{    
-    public class Service : IApplicationService
+namespace Janda.Runtime.Watchers
+{
+    public class ApplicationService : IApplicationService
     {
-        private readonly ILogger<Service> _logger;
+        private readonly ILogger<ApplicationService> _logger;
         private readonly IApplicationOptions _options;
         private readonly IApplicationSettings _settings;
         private readonly IMethodWatcherService _methodWatcher;
 
-        public Service(ILogger<Service> logger, IApplicationOptions options, IApplicationSettings settings, IMethodWatcherService methodWatcher)
+        public ApplicationService(ILogger<ApplicationService> logger, IApplicationOptions options, IApplicationSettings settings, IMethodWatcherService methodWatcher)
         {
             _logger = logger;
             _options = options;
@@ -42,7 +40,7 @@ namespace Janda.Runtime.Application
         {
             var abc = "abc";
 
-            var logger = Application.GetLogger<Service>();
+            var logger = Application.GetLogger<ApplicationService>();
 
             logger.LogInformation("abc GetHashCode: {HashCode}", abc.GetHashCode());
 
@@ -54,8 +52,6 @@ namespace Janda.Runtime.Application
 
             return param1?.Length ?? -10 + param2;
         }
-
-      
 
     }
 }

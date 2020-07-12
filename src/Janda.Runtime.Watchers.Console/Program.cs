@@ -4,27 +4,27 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using CommandLine;
 using Serilog;
+using Serilog.Sinks.SystemConsole.Themes;
 using Janda.Runtime.Watchers;
 
 // This is required to WatchMethod work
 [module: WatchMethod]
 
-namespace Janda.Runtime.Application
+namespace Janda.Runtime.Watchers
 {
-    class Program : IApplicationProgram
+
+    class Program : IProgram
     {
         static int Main(string[] args)
         {
             return Application.Run<Program, Options>(options => Parser.Default.ParseArguments<Options>(args).WithParsed(options));
         }
 
-        #region IApplicationProgram
-
         public void ConfigureServices(IServiceCollection serviceCollection)
         {
             serviceCollection
                 .AddMethodWatcher()
-                .AddSingleton<IApplicationService, Service>();
+                .AddSingleton<IApplicationService, ApplicationService>();
         }
 
         public IConfiguration CreateConfiguration()
@@ -39,7 +39,7 @@ namespace Janda.Runtime.Application
         {
             var loggerConfiguration = new LoggerConfiguration()
                 .ReadFrom.Configuration(Application.Configuration)
-                .WriteTo.ColoredConsole();
+                .WriteTo.Console(theme: AnsiConsoleTheme.Code, outputTemplate: "{Message:lj}{NewLine}{Exception}");
 
             var applicationOptions = Application.Options as Options;
 
@@ -52,7 +52,5 @@ namespace Janda.Runtime.Application
                 loggerConfiguration.CreateLogger(),
                 dispose: true);
         }
-
-        #endregion
     }
 }

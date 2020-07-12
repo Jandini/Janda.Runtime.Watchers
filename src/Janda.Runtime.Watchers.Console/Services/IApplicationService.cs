@@ -1,4 +1,4 @@
-﻿namespace Janda.Runtime.Application
+namespace Janda.Runtime.Watchers
 {
     public interface IApplicationService
     {

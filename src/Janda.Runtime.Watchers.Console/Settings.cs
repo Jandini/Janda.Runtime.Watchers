@@ -1,5 +1,5 @@
 ﻿    
-namespace Janda.Runtime.Application
+namespace Janda.Runtime.Watchers
 {
     public class Settings : IApplicationSettings
     {

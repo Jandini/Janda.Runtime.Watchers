@@ -1,8 +1,0 @@
-<?xml version='1.0'?>
-<Obfuscator>
-  <Var name="InPath" value="." />
-  <Var name="OutPath" value="obfuscate\Janda.Runtime.Watchers" />
-  <Var name="HidePrivateApi" value="true" />
-
-  <Module file="$(InPath)\Janda.Runtime.Watchers.dll" />
-</Obfuscator>

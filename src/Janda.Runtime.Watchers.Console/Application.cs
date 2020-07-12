@@ -3,9 +3,8 @@ using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
-using System.Runtime.InteropServices.WindowsRuntime;
 
-namespace Janda.Runtime.Application
+namespace Janda.Runtime.Watchers
 {
     internal class Application
     {
@@ -25,7 +24,7 @@ namespace Janda.Runtime.Application
         }
 
         public static int Run<TProgram, TOptions>(Action<Action<TOptions>> parseArgs)
-            where TProgram : IApplicationProgram, new()
+            where TProgram : IProgram, new()
             where TOptions : IApplicationOptions
         {
             var applicationProgram = new TProgram();
@@ -56,17 +55,16 @@ namespace Janda.Runtime.Application
                 }
                 catch (Exception ex)
                 {
-                    GetService<ILogger<Application>>()?.LogCritical(ex, ex.Message);
-                    throw;
+                    var logger = GetService<ILogger<Application>>();
+                    logger?.LogCritical(ex, ex.Message);
+                    returnCode = ex.HResult;
+
+                    if (logger == null)
+                        throw;
                 }
             });
 
             return returnCode;
-        }
-
-        public static ILogger<T> GetLogger<T>()
-        {
-            return GetService<ILogger<T>>();
         }
 
         public static T GetService<T>()
@@ -75,5 +73,11 @@ namespace Janda.Runtime.Application
                 ? Services.GetService<T>()
                 : default;
         }
+
+        public static ILogger<T> GetLogger<T>()
+        {
+            return GetService<ILogger<T>>();
+        }
+
     }
 }

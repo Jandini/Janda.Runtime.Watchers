@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <TargetsDir>$(ProjectDir)..\..\cid\targets</TargetsDir>
     <NoWarn>NU5100</NoWarn>
   </PropertyGroup>
 
@@ -45,12 +44,15 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Include="MethodDecorator.Fody" Version="1.1.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.4" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.4" />
-  </ItemGroup>
-
-  <Import Project="$(TargetsDir)\GitVersion.targets" />
-  <Import Project="$(TargetsDir)\Obfuscar.targets" />
-  <Import Project="$(TargetsDir)\Package.targets" />
+    <PackageReference Include="Janda.Dot.Service" Version="0.2.0" />
+    <PackageReference Include="Janda.Dot.GitVersion" Version="0.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Janda.Dot.NugetPackage" Version="0.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>  
 
 </Project>
