@@ -44,12 +44,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Include="MethodDecorator.Fody" Version="1.1.0" />
-    <PackageReference Include="Janda.Dot.Service" Version="0.2.0" />
-    <PackageReference Include="Janda.Dot.GitVersion" Version="0.2.0">
+    <PackageReference Include="Janda.Dot.Service" Version="0.3.0" />
+    <PackageReference Include="Janda.Dot.Version" Version="0.3.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Janda.Dot.NugetPackage" Version="0.2.0">
+    <PackageReference Include="Janda.Dot.Nuget" Version="0.3.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
