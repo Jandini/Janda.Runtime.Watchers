@@ -2,9 +2,9 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 
-namespace Janda.Runtime.Application
+namespace Janda.Runtime.Watchers
 {
-    public interface IApplicationProgram
+    public interface IProgram
     {
         IConfiguration CreateConfiguration();
         void ConfigureLogging(ILoggingBuilder loggingBuilder);
