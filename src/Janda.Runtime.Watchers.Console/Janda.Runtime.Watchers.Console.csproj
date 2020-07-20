@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <RootNamespace>Janda.Runtime.Watchers</RootNamespace>
+    <Authors>Matt Janda</Authors>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
