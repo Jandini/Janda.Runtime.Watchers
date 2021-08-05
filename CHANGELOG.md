@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/Jandini/Janda.Runtime.Watchers/compare/1.1.0...1.2.0) (2021-08-05)
+
 ## [1.1.0](https://github.com/Jandini/Janda.Runtime.Watchers/compare/1.0.0...1.1.0) (2020-07-17)
 
 
