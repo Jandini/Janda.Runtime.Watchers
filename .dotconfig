@@ -7,3 +7,5 @@ DOT_PUBLISH_RUNTIMES=win-x64
 DOT_PUBLISH_ARGUMENTS=-c Release
 # Semicolon delimited project names to be published
 DOT_PUBLISH_PROJECTS=Janda.Runtime.Watchers.Console
+# Nuget projects
+DOT_NUGET_PACKAGES=Janda.Runtime.Watchers

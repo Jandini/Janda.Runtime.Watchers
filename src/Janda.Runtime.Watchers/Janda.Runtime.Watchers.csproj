@@ -6,6 +6,10 @@
     <Authors>Matt Janda</Authors>
     <RepositoryUrl>https://github.com/Jandini/Janda.Runtime.Watchers</RepositoryUrl>    
   </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputPath>..\..\bin\$(Configuration)</OutputPath>
+  </PropertyGroup>
    
   <ItemGroup>
     <None Include="res/build/Janda.Runtime.Watchers.props" Pack="true" PackagePath="build/Janda.Runtime.Watchers.props" />
