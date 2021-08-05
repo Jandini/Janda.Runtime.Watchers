@@ -3,17 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <NoWarn>NU5100</NoWarn>
+    <Authors>Matt Janda</Authors>
+    <RepositoryUrl>https://github.com/Jandini/Janda.Runtime.Watchers</RepositoryUrl>    
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\..\bin</OutputPath>
-  </PropertyGroup>
-
-  
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>..\..\bin</OutputPath>
-  </PropertyGroup>
-
    
   <ItemGroup>
     <None Include="res/build/Janda.Runtime.Watchers.props" Pack="true" PackagePath="build/Janda.Runtime.Watchers.props" />
@@ -44,15 +36,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Include="MethodDecorator.Fody" Version="1.1.0" />
-    <PackageReference Include="Janda.Dot.Service" Version="0.3.0" />
-    <PackageReference Include="Janda.Dot.Version" Version="0.3.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Janda.Dot.Nuget" Version="0.3.0">
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.4" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.4" />
+    <PackageReference Include="GitVersion.MsBuild" Version="5.6.11">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>  
+
 
 </Project>
