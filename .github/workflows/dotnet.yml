@@ -33,10 +33,13 @@ jobs:
         dotnet-version: 3.1.x
         source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
     - name: Restore dependencies
-      run:
-        dotnet restore
+      run: |
+        dotnet restore Janda.Runtime.Watchers.sln
+        # dotnet restore Janda.Runtime.Watchers.Console.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: |
+        dotnet build Janda.Runtime.Watchers.sln --no-restore
+        # dotnet build Janda.Runtime.Watchers.Console.sln --no-restore
 # there's a problem with running tests. Perhaps after moving to 5 this problem will be resolved.
 #    - name: Test
 #      run: dotnet test --no-build --verbosity normal
